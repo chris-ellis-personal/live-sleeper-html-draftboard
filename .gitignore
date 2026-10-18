@@ -19,7 +19,7 @@ venv/
 # Personal rankings: keep your own sheets out of the repo
 *.xlsx
 *.xlsm
-!examples/sample_rankings.xlsx
+!examples/example_player_rankings.xlsx
 
 # OS / editor
 .DS_Store

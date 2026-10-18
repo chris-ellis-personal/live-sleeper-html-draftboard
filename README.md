@@ -29,7 +29,7 @@ python -m sleeper_draftboard run \
   --open-browser
 ```
 
-Try it without your own file using the bundled sample: `--file examples/sample_rankings.xlsx`.
+Try it without your own file using the bundled template: `--file examples/example_player_rankings.xlsx`. It's also the quickest way to see the expected spreadsheet layout (see [Rankings spreadsheet format](#rankings-spreadsheet-format)).
 
 Optional: `pip install .` installs a `sleeper-draftboard` command, so you can drop the `python -m` part. `pip install rapidfuzz` gives faster fuzzy matching (it falls back to the standard library otherwise).
 
@@ -57,6 +57,10 @@ The tool reads the **first row** (configurable with `--header-row`) to find your
 
 Players are listed top to bottom in your ranked order starting on the row under the header. The Overall column follows that order, and each position column keeps it within that position. Use `--sheet` to pick a worksheet other than the active one.
 
+### Template
+
+[`examples/example_player_rankings.xlsx`](examples/example_player_rankings.xlsx) is a ready-made template in exactly this format: a 166-player master list in columns A-D, plus QB/WR/RB/TE tier blocks driven by `FILTER()` formulas. Copy it and replace the players with your own rankings. The rankings in it are the author's own and are included only as an example of the layout, not as advice. Tier blocks use dynamic-array `FILTER()`, which needs Excel 365/2021 or later.
+
 ### Optional: tier blocks (for the Excel working copy)
 
 If you maintain per-position panels in the same sheet, the tool will strike players out there too. A block is six columns starting at a header cell reading `QB TIERS`, `WR TIERS`, `RB TIERS`, `TE TIERS`, etc.:
@@ -71,7 +75,7 @@ Row *n* of a block must mirror the *n*th player of that position in the master l
 =FILTER(A2:D200, D2:D200="QB")
 ```
 
-No blocks? That's fine. The HTML board and master-list strikethrough work without them. See [`examples/sample_rankings.xlsx`](examples/sample_rankings.xlsx) (regenerate with `python examples/make_sample_rankings.py`).
+No blocks? That's fine. The HTML board and master-list strikethrough work without them.
 
 ## Command reference
 

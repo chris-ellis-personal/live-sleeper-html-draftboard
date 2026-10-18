@@ -10,7 +10,7 @@ from sleeper_draftboard.rankings import LayoutError, Rankings, detect_layout, st
 from sleeper_draftboard.state import state_paths
 from sleeper_draftboard.tracker import DraftTracker
 
-SAMPLE = Path(__file__).resolve().parent.parent / "examples" / "sample_rankings.xlsx"
+SAMPLE = Path(__file__).resolve().parent.parent / "examples" / "example_player_rankings.xlsx"
 
 
 def load_sample():
@@ -50,7 +50,7 @@ def test_layout_detection_on_sample():
     lay = r.layout
     assert (lay.name_col, lay.team_col, lay.bye_col, lay.pos_col) == (1, 2, 3, 4)
     assert set(lay.blocks) == {"QB", "WR", "RB", "TE"}
-    assert len(r.players) == 26
+    assert len(r.players) == 166
     assert r.positions == ["QB", "RB", "WR", "TE"]
 
 

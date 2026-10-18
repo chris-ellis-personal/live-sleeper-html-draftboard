@@ -10,5 +10,5 @@ python -m pytest -q
 ```
 
 - Tests never hit the real Sleeper API; it is mocked (see `tests/`).
-- Please don't commit personal rankings files. `.gitignore` excludes `*.xlsx` except the sample.
+- Please don't commit personal rankings files. `.gitignore` excludes `*.xlsx` except `examples/example_player_rankings.xlsx`.
 - If you change the spreadsheet layout rules, update the "Rankings spreadsheet format" section of the README and add a test.
