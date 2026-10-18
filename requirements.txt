@@ -1,0 +1,4 @@
+requests>=2.28
+openpyxl>=3.1
+# Optional: faster, better fuzzy name matching (falls back to difflib without it)
+rapidfuzz>=3.0
